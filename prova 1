@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Atividade01 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double[] notas = new double[8];
+        double soma1Sem = 0, soma2Sem = 0;
+
+        // Entrada das 8 notas
+        for (int i = 0; i < 8; i++) {
+            System.out.print("Digite a nota do " + (i + 1) + "º bimestre: ");
+            notas[i] = input.nextDouble();
+        }
+
+        // Cálculos das médias
+        double media1Sem = (notas[0] + notas[1]) / 2;
+        double media2Sem = (notas[2] + notas[3]) / 2;
+        double media3Sem = (notas[4] + notas[5]) / 2;
+        double media4Sem = (notas[6] + notas[7]) / 2;
+
+        double mediaSem1 = (media1Sem + media2Sem) / 2;
+        double mediaSem2 = (media3Sem + media4Sem) / 2;
+        double mediaFinal = (mediaSem1 + mediaSem2) / 2;
+
+        // Saída formatada
+        System.out.println("\n------ Resultados ------");
+        System.out.println("1º Bimestre: " + notas[0]);
+        System.out.println("2º Bimestre: " + notas[1]);
+        System.out.println("1º Semestre: " + mediaSem1);
+        System.out.println("-------------------------");
+        System.out.println("3º Bimestre: " + notas[2]);
+        System.out.println("4º Bimestre: " + notas[3]);
+        System.out.println("2º Semestre: " + mediaSem2);
+        System.out.println("-------------------------");
+        System.out.println("Média Final: " + mediaFinal);
+
+        input.close();
+    }
+}
